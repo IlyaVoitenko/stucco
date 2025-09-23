@@ -1,4 +1,5 @@
-import styles from "./page.module.scss";
+import styles from "./styles.module.scss";
+
 export default function Main() {
   return (
     <main className={styles.container}>
