@@ -1,6 +1,7 @@
+import styles from "./page.module.scss";
 export default function Main() {
   return (
-    <main>
+    <main className={styles.container}>
       <h1>HERZLICH WILLKOMMEN</h1>
       <br />
       <p>
