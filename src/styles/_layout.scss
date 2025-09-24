@@ -1,7 +1,8 @@
+@use "./variables" as *;
 .containerPage {
   display: flex;
   flex-direction: column;
-  padding-inline: 3rem;
-  padding-block: 3rem;
+  padding-inline: $pInline;
+  padding-block-start: 11rem;
   height: 100vh;
 }

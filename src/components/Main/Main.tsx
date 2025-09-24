@@ -3,39 +3,63 @@ import styles from "./styles.module.scss";
 export default function Main() {
   return (
     <main className={styles.container}>
-      <h1>HERZLICH WILLKOMMEN</h1>
+      <h2>STUCKARBEITEN</h2>
       <br />
-      <p>
-        Meine berufliche Geschichte begann bereits Ende der 90er Jahre.
-        Inspiriert wurde ich von meinem Großvater, der aus Österreich in die
-        Ukraine kam und sich dort niederließ. Er brachte meinem Vater das
-        Handwerk des Stuckdekors bei, und mit der Zeit wurde dieser Beruf zu
-        einer Familientradition, die bis heute fortgeführt wird.
+      <p className={styles.content}>
+        {" "}
+        Unsere Firma hat ihren Hauptsitz in Grabow und wird persönlich vom
+        Inhaber Oleksandr Voitenko geführt. Wir sind auf den Groß- und
+        Einzelhandel mit Dekorationselementen aus hochwertigem Gips
+        spezialisiert – komplett ohne synthetische Zusätze. Kontaktieren Sie
+        uns, um aus unserer umfangreichen Auswahl der besten, in unserer
+        Werkstatt in Grabow hergestellten Stuckelemente zu wählen. Wir fertigen
+        individuell nach Ihren Anforderungen – für den Innen- und Außenbereich.
+        Dank unserer Restaurierungs- und Gussmethoden sind wir in der Lage,
+        bestehende Stuckelemente zu 100 % originalgetreu zu reproduzieren. So
+        können Lücken in vorhandenen Formen problemlos geschlossen und
+        historische Werke in neuem Glanz erstrahlen. Auf diese Weise bleibt die
+        ursprüngliche Schönheit und Handwerkskunst der Baukultur vergangener
+        Jahrhunderte erhalten. Darüber hinaus verfügen wir über Erfahrung in der
+        Herstellung von gebogenen, bogenförmigen und elliptischen Formen (z. B.
+        Segmentbögen), die wir exakt nach Ihren Maßen anfertigen.
       </p>
       <br />
-
-      <p>
-        Im Laufe meiner Arbeit in der Ukraine hatte ich die Gelegenheit,
-        Projekte für vier Präsidenten des Landes zu realisieren. Darüber hinaus
-        arbeitete ich für Abgeordnete, Minister und andere hochrangige Beamte.
-        Eines der bedeutendsten Projekte meiner Laufbahn war die Arbeit am
-        Marienpalast – der Residenz, in der die ukrainischen Präsidenten und
-        Regierungsvertreter Staatsoberhäupter und Delegationen aus aller Welt
-        empfangen.
+      <h2 className={styles.title}>INDIVIDUELLE ANFERTIGUNG</h2>
+      <br />
+      <p className={styles.content}>
+        {" "}
+        Der Bogen ist in der Architektur an vielen Bauwerken in
+        unterschiedlichen Variationen – vorrangig zu dekorativen Zwecken – zu
+        finden. Im Laufe der Jahrhunderte wurden verschiedenste Variationen von
+        Bögen entwickelt. Mit einem Bogen über dem Fenster, an der Tür oder
+        einer Hausfassade akzentuieren Sie ihre Individualität. Wir beraten Sie
+        gerne und fertigen dann für Sie z.B. Spitzbogen, Segmentbogen,
+        Elliptische Bogen usw.
       </p>
       <br />
-
-      <p>
-        Heute gründe ich ein Unternehmen in Deutschland, um hier die Traditionen
-        und das handwerkliche Können einzubringen, die ich in mehr als einem
-        Vierteljahrhundert gesammelt habe. Für mich ist dies nicht nur ein
-        Beruf, sondern eine Möglichkeit, die Arbeit und das Können nicht nur
-        meiner Generation, sondern auch der früheren Meister zu zeigen. Meine
-        Aufgabe ist es, das bereits Geschaffene zu bewahren, Erhaltenes zu
-        restaurieren und gleichzeitig Neues zu schaffen. Das ist eine Geschichte
-        über Tradition, Wertschätzung der Vergangenheit und das Streben nach
-        Perfektion in jedem Projekt.
+      <h2 className={styles.title}>ABFORMTECHNIK</h2>
+      <br />
+      <p className={styles.content}>
+        {" "}
+        Abformung und Reproduktion: Wir realisieren die Abformung vom Original
+        bei Ihnen vor Ort oder wir nehmen das Stuck-Element mit in unsere
+        Werkstatt. Dort wird es dann sorgfältig vorbereitet um später ein
+        optimales Ergebnis zu erzielen. Hierbei ist dann oft auch professionelle
+        Erfahrungen nötig, denn es ist eine handwerkliche Kunst aus dem
+        natürlichen Werkstoff Gips das vom Kunden gewünschte Stuck-Element zu
+        erstellen. Voraussetzung für eine gut funktionierende Abformung ist
+        zunächst eine eingehende Untersuchung der Beschaffenheit des Modells,
+        wobei der Untergrund besonders gründlich beurteilt werden sollte. Nach
+        der Modellvorbereitung setzen wir das Modell in einen speziell
+        angefertigten Holzrahmen. Dann gießen wir das Silikon (unverzüglich nach
+        dem Abmischen) in diese Form. Nach dem Erhärten (normal sind hierbei
+        etwa 24 Stunden), kann die Silikonform vom Modell abgenommen und für das
+        Gießen der Reproduktion vorbereitet werden. Es können jetzt in
+        beliebiger Anzahl Kopien erstellt werden. Jede benötigte Form kann so
+        individuelle vervielfältigt werden.
       </p>
+      <br />
+      <p>Wir freuen uns auf Ihren Auftrag!</p>
     </main>
   );
 }

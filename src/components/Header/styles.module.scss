@@ -1,0 +1,17 @@
+@use "../../styles/variables" as *;
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: $pInline;
+  padding-block: 1rem;
+  background-color: var(--background);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  .navList {
+    display: flex;
+    justify-content: space-between;
+    min-width: 300px;
+  }
+}
