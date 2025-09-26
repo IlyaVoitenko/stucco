@@ -1,6 +1,39 @@
 import React from "react";
 import styles from "./styles.module.scss";
-const AboutUs = () => {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
+  title: "Über uns",
+  description: "Erfahren Sie mehr über unsere Geschichte und unser Team",
+  openGraph: {
+    title: "Über uns",
+    description: "Erfahren Sie mehr über unsere Geschichte und unser Team",
+    url: process.env.BASE_URL + "/about-us",
+    siteName: "Stuckwerkstatt Voitenko",
+    images: [
+      {
+        url: process.env.BASE_URL + "/logo.svg",
+        width: 800,
+        height: 600,
+        alt: "Logo der Firma",
+      },
+    ],
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Über uns – Unsere Geschichte und Traditionen",
+    description:
+      "Erfahren Sie mehr über unsere Geschichte, unsere Traditionen und unser Team.",
+    images: [`${process.env.BASE_URL + "/logo.svg"}`],
+  },
+  alternates: {
+    canonical: process.env.BASE_URL + "/about-us",
+  },
+};
+export default function AboutUs() {
   return (
     <div className={styles.container}>
       <h1>HERZLICH WILLKOMMEN</h1>
@@ -36,6 +69,4 @@ const AboutUs = () => {
       </p>
     </div>
   );
-};
-
-export default AboutUs;
+}

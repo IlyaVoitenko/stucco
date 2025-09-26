@@ -15,9 +15,9 @@ const Header = () => {
         priority={true}
       />
       <nav className={styles.navList}>
-        <Link href={PAGES.HOME}>Home</Link>
-        <Link href={PAGES.CONTACT_US}>Contact Us</Link>
-        <Link href={PAGES.ABOUT_US}>About Us</Link>
+        <Link href={PAGES.HOME}>Startseite</Link>
+        <Link href={PAGES.CONTACT_US}>Kontaktieren Sie uns</Link>
+        <Link href={PAGES.ABOUT_US}>Über uns</Link>
       </nav>
     </div>
   );

@@ -1,5 +1,6 @@
+import styles from "./styles.module.scss";
 export default function PrivacyPolicy() {
-  <main>
+  <main className={styles.container}>
     <h1>Privacy Policy</h1>
     <br />
 

@@ -1,6 +1,8 @@
+import styles from "./styles.module.scss";
+
 export default function SiteNotice() {
   return (
-    <main>
+    <main className={styles.container}>
       <h1>Impressum</h1>
       <br />
 
