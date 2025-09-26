@@ -1,8 +1,8 @@
 import React from "react";
-
+import styles from "./styles.module.scss";
 const AboutUs = () => {
   return (
-    <div>
+    <div className={styles.container}>
       <h1>HERZLICH WILLKOMMEN</h1>
       <br />
       <p>
