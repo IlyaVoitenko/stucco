@@ -6,7 +6,7 @@ import React from "react";
 
 const Header = () => {
   return (
-    <div className={styles.container}>
+    <header className={styles.container}>
       <Image
         src={"/logo-white.png"}
         alt="logo"
@@ -19,7 +19,7 @@ const Header = () => {
         <Link href={PAGES.CONTACT_US}>Kontaktieren Sie uns</Link>
         <Link href={PAGES.ABOUT_US}>Über uns</Link>
       </nav>
-    </div>
+    </header>
   );
 };
 

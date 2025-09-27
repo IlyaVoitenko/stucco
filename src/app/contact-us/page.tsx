@@ -50,8 +50,8 @@ export default function ContactUs() {
       <br />
       <address>
         <p>Stuckwerkstatt Voitenko</p>
-        <p>Berliner Str 23A</p>
-        <p>19300, Grabow </p>
+        <p>adress</p>
+        <p> </p>
       </address>
     </main>
   );

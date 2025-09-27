@@ -1,0 +1,15 @@
+@use "../../styles/index" as *;
+.container {
+  display: flex;
+  padding-inline: $pInline;
+  padding-block: 1rem;
+
+  .nav {
+    height: 130px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
