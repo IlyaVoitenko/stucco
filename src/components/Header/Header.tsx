@@ -1,24 +1,100 @@
+"use client";
 import { PAGES } from "@/config/pages.config";
 import styles from "./styles.module.scss";
 import Link from "next/link";
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
+import menuClose from "../../assets/menu-close.svg";
+import menu from "../../assets/menu.svg";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  const path = usePathname();
   return (
-    <header className={styles.container}>
-      <Image
-        src={"/logo-white.png"}
-        alt="logo"
-        width={100}
-        height={100}
-        priority={true}
-      />
-      <nav className={styles.navList}>
-        <Link href={PAGES.HOME}>Startseite</Link>
-        <Link href={PAGES.CONTACT_US}>Kontaktieren Sie uns</Link>
-        <Link href={PAGES.ABOUT_US}>Über uns</Link>
-      </nav>
+    <header>
+      <div className={styles.mobileContainer}>
+        <div className={styles.logoContainer}>
+          <Image
+            src={"/logo-white.png"}
+            alt="logo"
+            width={100}
+            height={100}
+            priority={true}
+          />
+          <Image
+            src={isMobile ? menuClose : menu}
+            alt="logo"
+            width={20}
+            height={20}
+            priority={true}
+            onClick={() => setIsMobile((value) => !value)}
+          />
+        </div>
+
+        <nav
+          className={`${styles.navList} ${
+            isMobile ? styles.show : styles.hide
+          }`}
+        >
+          <Link
+            href={PAGES.HOME}
+            className={path === PAGES.HOME ? styles.active : styles.inactive}
+          >
+            Startseite
+          </Link>
+          <Link
+            href={PAGES.CONTACT_US}
+            className={
+              path === PAGES.CONTACT_US ? styles.active : styles.inactive
+            }
+          >
+            Kontaktieren Sie uns
+          </Link>
+          <Link
+            href={PAGES.ABOUT_US}
+            className={
+              path === PAGES.ABOUT_US ? styles.active : styles.inactive
+            }
+          >
+            Über uns
+          </Link>
+        </nav>
+      </div>
+      <div className={styles.desktopContainer}>
+        <Image
+          src={"/logo-white.png"}
+          alt="logo"
+          width={100}
+          height={100}
+          priority={true}
+        />
+        <nav className={styles.navList}>
+          <Link
+            href={PAGES.HOME}
+            className={path === PAGES.HOME ? styles.active : styles.inactive}
+          >
+            Startseite
+          </Link>
+          <Link
+            href={PAGES.CONTACT_US}
+            className={
+              path === PAGES.CONTACT_US ? styles.active : styles.inactive
+            }
+          >
+            Kontaktieren Sie uns
+          </Link>
+          <Link
+            href={PAGES.ABOUT_US}
+            className={
+              path === PAGES.ABOUT_US ? styles.active : styles.inactive
+            }
+          >
+            Über uns
+          </Link>
+        </nav>
+      </div>
     </header>
   );
 };

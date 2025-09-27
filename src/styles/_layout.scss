@@ -1,10 +1,16 @@
 @use "./variables" as *;
+@use "./media" as *;
+
 .containerPage {
   display: flex;
   flex-direction: column;
   padding-inline: $pInline;
   padding-block-start: 9rem;
   height: 100vh;
+  @include mobile {
+    height: 100%;
+    padding-inline: $pInlineMobile;
+  }
 }
 
 .title {

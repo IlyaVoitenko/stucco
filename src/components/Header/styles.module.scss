@@ -1,5 +1,7 @@
 @use "../../styles/variables" as *;
-.container {
+@use "../../styles/media" as *;
+@use "../../styles/colors" as *;
+.desktopContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -9,9 +11,63 @@
   width: 100%;
   position: fixed;
   top: 0;
+  @include mobile {
+    display: none;
+  }
   .navList {
     display: flex;
     justify-content: space-between;
     min-width: 300px;
+    gap: 2rem;
   }
+}
+.mobileContainer {
+  display: none;
+  .logoContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  @include mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding-inline: $pInlineMobile;
+    padding-block: 1rem;
+    background-color: var(--background);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    .navList {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+
+      width: 100%;
+      background-color: var(--background);
+      border-top: 1px solid var(--border);
+      padding-block: 1rem;
+
+      .activeLink {
+        color: $linkActiveColor;
+      }
+    }
+  }
+  .show {
+    display: flex;
+  }
+  .hide {
+    display: none;
+  }
+}
+.inactive {
+  color: $linkActiveColor;
+}
+.active {
+  color: $grey;
 }
