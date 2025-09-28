@@ -1,0 +1,7 @@
+@use "./media" as *;
+
+@mixin link {
+  @include desktop {
+    font-size: 1.7rem;
+  }
+}

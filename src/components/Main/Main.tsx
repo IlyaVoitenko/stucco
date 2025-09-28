@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 export default function Main() {
   return (
     <main className={styles.container}>
-      <h2>STUCKARBEITEN</h2>
+      <h2 className={`${styles.title} ${styles.mb}`}>STUCKARBEITEN</h2>
       <br />
       <p className={styles.content}>
         {" "}

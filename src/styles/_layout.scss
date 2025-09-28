@@ -6,16 +6,33 @@
   flex-direction: column;
   padding-inline: $pInline;
   padding-block-start: 9rem;
-  height: 100vh;
+  min-height: 100vh;
   @include mobile {
-    height: 100%;
     padding-inline: $pInlineMobile;
   }
+  @include tablet {
+    padding-block-start: 6rem;
+  }
+  @include laptop {
+    padding-block-start: 6rem;
+  }
+  @include desktop {
+    padding-block-start: 13rem;
+  }
 }
-
-.title {
+.mb {
   margin-block: 1rem;
+}
+.title {
+  @include desktop {
+    line-height: 3rem;
+    font-size: 3rem;
+  }
 }
 .content {
   line-height: 1.5rem;
+  @include desktop {
+    line-height: 3rem;
+    font-size: 2rem;
+  }
 }

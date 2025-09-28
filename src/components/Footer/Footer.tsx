@@ -5,11 +5,21 @@ const Footer = () => {
   return (
     <footer className={styles.container}>
       <nav className={styles.nav}>
-        <Link href={PAGES.HOME}>Startseite</Link>
-        <Link href={PAGES.ABOUT_US}>Über uns</Link>
-        <Link href={PAGES.CONTACT_US}>Kontakt</Link>
-        <Link href={PAGES.PRIVACY_POLICY}>Datenschutz</Link>
-        <Link href={PAGES.SITE_NOTICE}>Impressum</Link>
+        <Link href={PAGES.HOME} className={styles.link}>
+          Startseite
+        </Link>
+        <Link href={PAGES.ABOUT_US} className={styles.link}>
+          Über uns
+        </Link>
+        <Link href={PAGES.CONTACT_US} className={styles.link}>
+          Kontakt
+        </Link>
+        <Link href={PAGES.PRIVACY_POLICY} className={styles.link}>
+          Datenschutz
+        </Link>
+        <Link href={PAGES.SITE_NOTICE} className={styles.link}>
+          Impressum
+        </Link>
       </nav>
     </footer>
   );

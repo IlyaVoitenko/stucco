@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function AboutUs() {
   return (
     <div className={styles.container}>
-      <h1>HERZLICH WILLKOMMEN</h1>
+      <h1 className={`${styles.title} ${styles.mb}`}>HERZLICH WILLKOMMEN</h1>
       <br />
       <p>
         Meine berufliche Geschichte begann bereits Ende der 90er Jahre.

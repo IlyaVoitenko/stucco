@@ -1,10 +1,25 @@
 @use "../../styles/index" as *;
+@use "../../styles/components" as *;
+@use "../../styles/media" as *;
 .container {
   display: flex;
   padding-inline: $pInline;
   padding-block: 1rem;
   @include mobile {
     padding-inline: $pInlineMobile;
+    padding-block-start: 4rem;
+  }
+  @include tablet {
+    padding-block-start: 4rem;
+  }
+  @include laptop {
+    padding-block-start: 4rem;
+  }
+  @include laptopL {
+    padding-block-start: 4rem;
+  }
+  @include desktop {
+    padding-block-start: 13rem;
   }
   .nav {
     height: 130px;
@@ -12,5 +27,11 @@
     flex-direction: column;
     flex-wrap: wrap;
     gap: 1rem;
+
+    @include desktop {
+      height: 200px;
+    }
   }
+
+  @include link;
 }

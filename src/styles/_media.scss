@@ -1,21 +1,56 @@
 @use "./variables" as *;
-@mixin mobile {
-  @media screen and (max-width: $mobile) {
+@mixin mobileS {
+  @media screen and (max-width: $mobileS) {
+    @content;
+  }
+}
+@mixin mobileM {
+  @media screen and (max-width: $mobileM) {
+    @content;
+  }
+}
+@mixin mobileL {
+  @media screen and (max-width: $mobileL) {
     @content;
   }
 }
 @mixin mobile {
-  @media screen and (max-width: $mobile) {
+  $max-mobile: $tablet - 1;
+  @media screen and (max-width: #{$max-mobile}) {
     @content;
   }
 }
-@mixin mobile {
-  @media screen and (max-width: $mobile) {
+@mixin tablet {
+  $max-tablet: $laptop - 1;
+  @media screen and (min-width: $tablet) and (max-width: #{$max-tablet}) {
     @content;
   }
 }
-@mixin mobile {
-  @media screen and (max-width: $mobile) {
+@mixin laptop {
+  $max-laptop: $laptopL - 1;
+  $min-laptop: $laptop - 1;
+
+  @media screen and (min-width: #{ $min-laptop}) and (max-width: #{$max-laptop}) {
+    @content;
+  }
+}
+@mixin laptopL {
+  $max-laptopL: $desktop - 1;
+  $min-laptopL: $laptopL - 1;
+  @media screen and
+    (
+      min-width: #{$min-laptopL}
+    )
+    and
+    (
+      max-width: #{$max-laptopL}
+    ) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: $desktop) {
     @content;
   }
 }

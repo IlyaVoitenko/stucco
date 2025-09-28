@@ -69,6 +69,10 @@ const Header = () => {
           width={100}
           height={100}
           priority={true}
+          style={{
+            width: "auto", // растягивается на всю ширину контейнера
+            height: "100%", // сохраняет пропорции
+          }}
         />
         <nav className={styles.navList}>
           <Link
