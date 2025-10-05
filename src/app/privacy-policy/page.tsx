@@ -8,44 +8,38 @@ export default function PrivacyPolicy() {
       <p>Adresse: adress</p>
       <p>Inhaber: Oleksandr Voitenko</p>
       <p>E-Mail: stuckwerkstattvoitenko@gmail.com</p>
-      <p></p>
+      <p>Telefon: +491639252077</p>
+
       <br />
       <p>
-        2. Allgemeine Hinweise
-        <br />
-        Der Schutz Ihrer persönlichen Daten ist uns wichtig. Unsere Website
-        dient ausschließlich zur Bereitstellung von Informationen über unsere
-        Produkte und Dienstleistungen. Eine Erhebung, Speicherung oder
-        Verarbeitung personenbezogener Daten findet nicht statt.
+        2. Allgemeine Hinweise Der Schutz Ihrer persönlichen Daten ist uns
+        wichtig. Unsere Website dient ausschließlich zur Bereitstellung von
+        Informationen über unsere Produkte und Dienstleistungen. Eine Erhebung,
+        Speicherung oder Verarbeitung personenbezogener Daten findet nicht
+        statt.
       </p>
       <br />
 
       <p>
-        3. Server-Logfiles
-        <br />
-        Beim Aufruf unserer Website werden durch den Provider automatisch
-        Informationen gespeichert (z. B. IP-Adresse, Browsertyp, Uhrzeit des
-        Zugriffs). Diese Daten werden ausschließlich zur Sicherstellung des
-        technischen Betriebs und zur Verbesserung des Angebots verwendet und
-        nicht mit anderen Datenquellen zusammengeführt.
+        3. Server-Logfiles Beim Aufruf unserer Website werden durch den Provider
+        automatisch Informationen gespeichert (z. B. IP-Adresse, Browsertyp,
+        Uhrzeit des Zugriffs). Diese Daten werden ausschließlich zur
+        Sicherstellung des technischen Betriebs und zur Verbesserung des
+        Angebots verwendet und nicht mit anderen Datenquellen zusammengeführt.
       </p>
       <br />
 
       <p>
-        4. Cookies
-        <br />
-        Unsere Website verwendet keine Cookies, die personenbezogene Daten
-        speichern.{" "}
+        4. Cookies Unsere Website verwendet keine Cookies, die personenbezogene
+        Daten speichern.{" "}
       </p>
       <br />
 
       <p>
-        5. Rechte der Nutzer
-        <br />
-        Da keine personenbezogenen Daten verarbeitet werden, ergeben sich für
-        Nutzer keine weitergehenden Ansprüche. Im Falle von Fragen zum
-        Datenschutz können Sie uns jedoch jederzeit unter der oben genannten
-        Adresse kontaktieren.{" "}
+        5. Rechte der Nutzer Da keine personenbezogenen Daten verarbeitet
+        werden, ergeben sich für Nutzer keine weitergehenden Ansprüche. Im Falle
+        von Fragen zum Datenschutz können Sie uns jedoch jederzeit unter der
+        oben genannten Adresse kontaktieren.{" "}
       </p>
     </main>
   );

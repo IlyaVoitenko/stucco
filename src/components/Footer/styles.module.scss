@@ -3,6 +3,8 @@
 @use "../../styles/media" as *;
 .container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   padding-inline: $pInline;
   padding-block: 1rem;
   @include mobile {
@@ -21,6 +23,25 @@
   @include desktop {
     padding-block-start: 13rem;
   }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      justify-content: space-evenly;
+      gap: 2rem;
+    }
+    .workHours {
+      ul {
+        list-style-type: none;
+      }
+    }
+  }
   .nav {
     height: 130px;
     display: flex;
@@ -32,6 +53,8 @@
       height: 200px;
     }
   }
-
+  .copy {
+    margin-top: 1rem;
+  }
   @include link;
 }

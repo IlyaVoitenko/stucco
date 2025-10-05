@@ -36,17 +36,17 @@ export default function ContactUs() {
     <main className={styles.container}>
       <h1>Kontaktieren Sie uns</h1>
       <br />
-      <p>
+      <span>
         Email:{" "}
         <a href="mailto:stuckwerkstattvoitenko@gmail.com">
           stuckwerkstattvoitenko@gmail.com
         </a>
-      </p>
+      </span>
 
       <br />
-      <p>
+      <span>
         Telefon: <a href="tel:+491639252077">+491639252077</a>
-      </p>
+      </span>
       <br />
       <address>
         <p>Stuckwerkstatt Voitenko</p>
