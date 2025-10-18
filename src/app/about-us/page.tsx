@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./styles.module.scss";
 import { Metadata } from "next";
+import { WithContext, AboutPage } from "schema-dts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
@@ -32,6 +33,14 @@ export const metadata: Metadata = {
   alternates: {
     canonical: process.env.BASE_URL + "/about-us",
   },
+};
+const jsonLd: WithContext<AboutPage> = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "Stuckwerkstatt Voitenko Über uns Seite",
+  description:
+    "Meine berufliche Geschichte begann bereits Ende der 90er Jahre.  Inspiriert wurde ich von meinem Großvater, der aus Österreich in die Ukraine kam und sich dort niederließ. Er brachte meinem Vater das Handwerk des Stuckdekors bei, und mit der Zeit wurde dieser Beruf zu einer Familientradition, die bis heute fortgeführt wird.",
+  image: process.env.BASE_URL + "/logo.svg",
 };
 export default function AboutUs() {
   return (
@@ -67,6 +76,12 @@ export default function AboutUs() {
         über Tradition, Wertschätzung der Vergangenheit und das Streben nach
         Perfektion in jedem Projekt.
       </p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
     </div>
   );
 }

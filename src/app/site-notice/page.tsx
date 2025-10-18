@@ -8,7 +8,7 @@ export default function SiteNotice() {
 
       <p>Angaben gemäß § 5 TMG: Stuckwerkstatt Voitenko </p>
       <p>Inhaber: Oleksandr Voitenko</p>
-      <p>Adresse: </p>
+      <p>Adresse: Berliner str 23A, 19300, Grabow</p>
       <br />
       <p>Kontakt</p>
       <p>Telefon: +491639252077</p>
@@ -24,7 +24,7 @@ export default function SiteNotice() {
       Einzelunternehmen без Handelsregister — убери эту строку) */}
       <p>
         Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV: Oleksandr Voitenko,
-        adress
+        Adresse: Berliner str 23A, 19300, Grabow
       </p>
       {/* [Name, Anschrift] (сюда снова твое имя и адрес, как выше) */}
     </main>

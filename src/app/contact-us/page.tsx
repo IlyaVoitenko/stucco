@@ -1,5 +1,6 @@
 import styles from "./styles.module.scss";
 import { Metadata } from "next";
+import { WithContext, ContactPoint } from "schema-dts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
@@ -31,6 +32,24 @@ export const metadata: Metadata = {
     canonical: process.env.BASE_URL + "/contact-us",
   },
 };
+
+const jsonLd: WithContext<ContactPoint> = {
+  "@context": "https://schema.org",
+  "@type": "ContactPoint",
+  name: "Stuckwerkstatt Voitenko Kontaktseite",
+  image: process.env.BASE_URL + "/logo.svg",
+  email: "stuckwerkstattvoitenko@gmail.com",
+  telephone: "+491639252077",
+  areaServed: "DE",
+  availableLanguage: ["Deutsch", "Russisch", "Ukrainisch"],
+  contactType: "customer support",
+  hoursAvailable: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:00",
+    closes: "18:00",
+  },
+};
 export default function ContactUs() {
   return (
     <main className={styles.container}>
@@ -50,9 +69,14 @@ export default function ContactUs() {
       <br />
       <address>
         <p>Stuckwerkstatt Voitenko</p>
-        <p>adress</p>
-        <p> </p>
+        <p>Adress: Berliner str 23A, 19300, Grabow </p>
       </address>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
     </main>
   );
 }

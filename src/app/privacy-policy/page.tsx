@@ -5,7 +5,7 @@ export default function PrivacyPolicy() {
       <h1>Privacy Policy</h1>
       <br />
       <p>1. Verantwortlicher Stuckwerkstatt Voitenko </p>
-      <p>Adresse: adress</p>
+      <p>Adresse: Berliner str 23A, 19300, Grabow</p>
       <p>Inhaber: Oleksandr Voitenko</p>
       <p>E-Mail: stuckwerkstattvoitenko@gmail.com</p>
       <p>Telefon: +491639252077</p>
