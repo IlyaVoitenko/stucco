@@ -1,5 +1,13 @@
+import { AboutPage, WithContext } from "schema-dts";
 import styles from "./styles.module.scss";
-
+const jsonLd: WithContext<AboutPage> = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "Stuckwerkstatt Voitenko Hauptseite",
+  description:
+    "Unsere Firma hat ihren Hauptsitz in Grabow und wird persönlich vom Inhaber Oleksandr Voitenko geführt. Wir sind auf den Groß- und Einzelhandel mit Dekorationselementen aus hochwertigem Gips spezialisiert – komplett ohne synthetische Zusätze.",
+  image: process.env.BASE_URL + "/logo.svg",
+};
 export default function Main() {
   return (
     <main className={styles.container}>
@@ -60,6 +68,12 @@ export default function Main() {
       </p>
       <br />
       <p>Wir freuen uns auf Ihren Auftrag!</p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
+      />
     </main>
   );
 }
