@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     siteName: "Stuckwerkstatt Voitenko",
     images: [
       {
-        url: process.env.BASE_URL + "logo.svg",
+        url: `${process.env.BASE_URL}/logo-white.png`,
         width: 800,
         height: 600,
         alt: "Logo der Firma",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Stuckwerkstatt Voitenko",
     description: "Willkommen bei der Stuckwerkstatt Voitenko",
-    images: [`${process.env.BASE_URL + "logo.svg"}`],
+    images: [`${process.env.BASE_URL}/logo-white.png`],
   },
 };
 

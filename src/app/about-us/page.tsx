@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Stuckwerkstatt Voitenko",
     images: [
       {
-        url: process.env.BASE_URL + "logo.svg",
+        url: `${process.env.BASE_URL}/logo-white.png`,
         width: 800,
         height: 600,
         alt: "Logo der Firma",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     title: "Über uns – Unsere Geschichte und Traditionen",
     description:
       "Erfahren Sie mehr über unsere Geschichte, unsere Traditionen und unser Team.",
-    images: [`${process.env.BASE_URL + "logo.svg"}`],
+    images: [`${process.env.BASE_URL}/logo-white.png`],
   },
   alternates: {
     canonical: process.env.BASE_URL + "/about-us",
@@ -40,7 +40,7 @@ const jsonLd: WithContext<AboutPage> = {
   name: "Stuckwerkstatt Voitenko Über uns Seite",
   description:
     "Meine berufliche Geschichte begann bereits Ende der 90er Jahre.  Inspiriert wurde ich von meinem Großvater, der aus Österreich in die Ukraine kam und sich dort niederließ. Er brachte meinem Vater das Handwerk des Stuckdekors bei, und mit der Zeit wurde dieser Beruf zu einer Familientradition, die bis heute fortgeführt wird.",
-  image: process.env.BASE_URL + "logo.svg",
+  image: `${process.env.BASE_URL}/logo-white.png`,
 };
 export default function AboutUs() {
   return (
