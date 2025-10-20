@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     siteName: "Stuckwerkstatt Voitenko",
     images: [
       {
-        url: `${process.env.BASE_URL}/logo-white.png`,
+        url: `${process.env.BASE_URL}/og-logo.png`,
         width: 800,
         height: 600,
         alt: "Logo der Firma",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Kontaktieren Sie uns – Stuckwerkstatt Voitenko",
     description: "Kontaktieren Sie uns für Anfragen und Unterstützung",
-    images: [`${process.env.BASE_URL}/logo-white.png`],
+    images: [`${process.env.BASE_URL}/og-logo.png`],
   },
   alternates: {
     canonical: process.env.BASE_URL + "/contact-us",
@@ -37,7 +37,7 @@ const jsonLd: WithContext<ContactPoint> = {
   "@context": "https://schema.org",
   "@type": "ContactPoint",
   name: "Stuckwerkstatt Voitenko Kontaktseite",
-  image: `${process.env.BASE_URL}/logo-white.png`,
+  image: `${process.env.BASE_URL}/og-logo.png`,
   email: "stuckwerkstattvoitenko@gmail.com",
   telephone: "+491639252077",
   areaServed: "DE",
