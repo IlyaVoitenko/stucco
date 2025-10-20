@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "Stuckwerkstatt Voitenko",
     images: [
       {
-        url: process.env.BASE_URL + "/logo.svg",
+        url: process.env.BASE_URL + "about-us/logo.svg",
         width: 800,
         height: 600,
         alt: "Logo der Firma",

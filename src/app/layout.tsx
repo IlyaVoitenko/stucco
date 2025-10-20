@@ -19,8 +19,30 @@ export const metadata: Metadata = {
     default: "Stuckwerkstatt Voitenko",
     template: "%s | Stuckwerkstatt Voitenko",
   },
-  description:
-    "We sell stucco elements made of plaster of the highest quality (natural material alabaster model plaster) from international production and our own production in our workshop in Grabow, carefully handcrafted.",
+  description: "Willkommen bei der Stuckwerkstatt Voitenko",
+  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
+  openGraph: {
+    title: "Stuckwerkstatt Voitenko",
+    description: "Willkommen bei der Stuckwerkstatt Voitenko",
+    url: process.env.BASE_URL || "http://localhost:3000",
+    siteName: "Stuckwerkstatt Voitenko",
+    images: [
+      {
+        url: process.env.BASE_URL + "/logo.svg",
+        width: 800,
+        height: 600,
+        alt: "Logo der Firma",
+      },
+    ],
+    locale: "de_DE",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stuckwerkstatt Voitenko",
+    description: "Willkommen bei der Stuckwerkstatt Voitenko",
+    images: [`${process.env.BASE_URL + "/logo.svg"}`],
+  },
 };
 
 export default function RootLayout({
