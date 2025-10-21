@@ -8,6 +8,9 @@ import menuClose from "../../assets/menu-close.svg";
 import menu from "../../assets/menu.svg";
 import { usePathname } from "next/navigation";
 
+const handleMoveMobileMenu = (
+  setIsMobile: React.Dispatch<React.SetStateAction<boolean>>
+) => setIsMobile((prev: boolean) => !prev);
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -41,6 +44,7 @@ const Header = () => {
           <Link
             href={PAGES.HOME}
             className={path === PAGES.HOME ? styles.active : styles.inactive}
+            onClick={() => handleMoveMobileMenu(setIsMobile)}
           >
             Startseite
           </Link>
@@ -49,6 +53,7 @@ const Header = () => {
             className={
               path === PAGES.CONTACT_US ? styles.active : styles.inactive
             }
+            onClick={() => handleMoveMobileMenu(setIsMobile)}
           >
             Kontaktieren Sie uns
           </Link>
@@ -57,6 +62,7 @@ const Header = () => {
             className={
               path === PAGES.ABOUT_US ? styles.active : styles.inactive
             }
+            onClick={() => handleMoveMobileMenu(setIsMobile)}
           >
             Über uns
           </Link>

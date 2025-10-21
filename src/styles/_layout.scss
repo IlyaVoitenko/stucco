@@ -24,6 +24,7 @@
   margin-block: 1rem;
 }
 .title {
+  line-height: 2rem;
   @include desktop {
     line-height: 3rem;
     font-size: 3rem;
