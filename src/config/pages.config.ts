@@ -4,4 +4,5 @@ export const PAGES = {
   PRIVACY_POLICY: "/privacy-policy",
   ABOUT_US: "/about-us",
   CONTACT_US: "/contact-us",
+  CATEGORIES: "/categories",
 };

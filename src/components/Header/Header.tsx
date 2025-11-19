@@ -76,8 +76,8 @@ const Header = () => {
           height={100}
           priority={true}
           style={{
-            width: "auto", // растягивается на всю ширину контейнера
-            height: "100%", // сохраняет пропорции
+            width: "auto",
+            height: "100%",
           }}
         />
         <nav className={styles.navList}>
@@ -86,6 +86,14 @@ const Header = () => {
             className={path === PAGES.HOME ? styles.active : styles.inactive}
           >
             Startseite
+          </Link>
+          <Link
+            href={PAGES.CATEGORIES}
+            className={
+              path === PAGES.CATEGORIES ? styles.active : styles.inactive
+            }
+          >
+            Kategorien
           </Link>
           <Link
             href={PAGES.CONTACT_US}
