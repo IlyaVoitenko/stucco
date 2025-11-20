@@ -1,11 +1,16 @@
 import styles from "./styles.module.scss";
 import CategoriesList from "@/components/CategoriesList";
 
-const Categories = async () => {
-  const data = await fetch("http://localhost:3000/api/categories", {
+const getCategories = async () => {
+  const data = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}categories`, {
     method: "GET",
   });
-  const posts = await data.json();
+  if (!data.ok) throw new Error("Failed to fetch categories");
+  return data.json();
+};
+
+const Categories = async () => {
+  const posts = await getCategories();
   return (
     <div className={styles.container}>
       <CategoriesList categories={posts} />

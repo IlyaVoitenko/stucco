@@ -1,6 +1,6 @@
 "use client";
 import CategoryItem from "../CategoryItem";
-
+import styles from "./styles.module.scss";
 type Category = {
   id: number;
   name: string;
@@ -11,7 +11,7 @@ type Category = {
 
 const CategoriesList = ({ categories }: { categories: Category[] }) => {
   return (
-    <ul>
+    <ul className={styles.container}>
       {categories &&
         categories.map((category) => (
           <li key={category.id}>

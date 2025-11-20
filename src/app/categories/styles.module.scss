@@ -6,3 +6,16 @@
   @extend .content;
   @extend .mb;
 }
+
+.errorTitle {
+  @extend .title;
+  text-align: center;
+  margin-top: 50px;
+  color: $colorError;
+}
+.errorMessage {
+  @extend .content;
+  text-align: center;
+  margin-top: 20px;
+  color: $grey;
+}
