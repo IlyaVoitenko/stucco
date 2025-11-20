@@ -1,0 +1,30 @@
+@use "../../styles/colors" as *;
+.container {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  .btnGoBack {
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    padding: 5px;
+    transition: transform 0.7s ease, box-shadow 0.7s ease;
+
+    &:hover {
+      box-shadow: 0px 1px 8px $borderColorSignIn;
+      transform: scale(1.1);
+    }
+
+    button {
+      background-color: var(--background);
+      border: none;
+      color: $linkActiveColor;
+
+      font-size: small;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+  }
+}

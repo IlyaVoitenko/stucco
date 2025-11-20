@@ -5,4 +5,5 @@ export const PAGES = {
   ABOUT_US: "/about-us",
   CONTACT_US: "/contact-us",
   CATEGORIES: "/categories",
+  SELECTED_CATEGORY: "/categories/[category]",
 };

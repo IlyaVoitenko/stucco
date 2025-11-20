@@ -1,0 +1,8 @@
+@use "../../../styles/index" as *;
+
+.container {
+  @extend .containerPage;
+  @extend .title;
+  @extend .content;
+  @extend .mb;
+}
