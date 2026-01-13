@@ -1,13 +1,17 @@
 import Link from "next/link";
 import styles from "./styles.module.scss";
 import { PAGES } from "@/config/pages.config";
-const GoBackBtn = () => {
+type GoBackBtnProps = {
+  path: string;
+  text: string;
+};
+const GoBackBtn = ({ path, text }: GoBackBtnProps) => {
   return (
     <div className={styles.container}>
-      <Link href={PAGES.CATEGORIES} className={styles.btnGoBack}>
+      <Link href={path} className={styles.btnGoBack}>
         <button>
           {`←`}
-          <span className={styles.btnText}>Zurück zu Kategorien</span>
+          <span className={styles.btnText}>{text}</span>
         </button>
       </Link>
     </div>

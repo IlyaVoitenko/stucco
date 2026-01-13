@@ -1,14 +1,8 @@
 import styles from "./styles.module.scss";
 import { Metadata } from "next";
+import { getCategories } from "@/app/api/categories/route";
 import CategoriesList from "@/components/CategoriesList";
 
-const getCategories = async () => {
-  const data = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}categories`, {
-    method: "GET",
-  });
-  if (!data.ok) throw new Error("Failed to fetch categories");
-  return data.json();
-};
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
   title: "Kategorien",
