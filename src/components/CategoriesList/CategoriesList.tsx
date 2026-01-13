@@ -1,30 +1,22 @@
-"use client";
 import React from "react";
-import CategoryItem from "../CategoryItem";
+import { getCategories } from "@/lib/categories";
+import CategoryItem from "@/components/CategoryItem";
+import { ICategory } from "@/types";
 import styles from "./styles.module.scss";
 
-interface Category {
-  id: number;
-  name: string;
-  image: string;
-  updatedAt: string;
-  createdAt: string;
-}
+export default async function CategoriesList() {
+  const data = await getCategories();
+  if (!Array.isArray(data) || data.length === 0) {
+    return <p>Keine Kategorien verfügbar.</p>;
+  }
 
-const CategoriesList = ({ categories }: { categories: Category[] | [] }) => {
   return (
     <ul className={styles.container}>
-      {categories.length > 0 ? (
-        categories.map((category) => (
-          <li key={category.id}>
-            <CategoryItem title={category.name} imageUrl={category.image} />
-          </li>
-        ))
-      ) : (
-        <p>Keine Kategorien verfügbar.</p>
-      )}
+      {data.map((category: ICategory) => (
+        <li key={category.id}>
+          <CategoryItem title={category.name} imageUrl={category.image} />
+        </li>
+      ))}
     </ul>
   );
-};
-
-export default React.memo(CategoriesList);
+}

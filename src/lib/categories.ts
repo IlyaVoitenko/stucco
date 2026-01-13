@@ -1,13 +1,13 @@
 export const getCategories = async () => {
   try {
     const data = await fetch(
-      `${process.env.NEXT_PUBLIC_BACKEND_URL}categories`,
-      {
-        cache: "no-store",
-      }
+      `${process.env.NEXT_PUBLIC_BACKEND_URL}categories`
     );
+    if (!data.ok) {
+      throw new Error(`Upstream error: ${data.status} ${data.statusText}`);
+    }
     return data.json();
-  } catch {
-    throw new Error("Failed to fetch categories");
+  } catch (err) {
+    throw new Error("Failed to fetch categories: " + (err as Error).message);
   }
 };
