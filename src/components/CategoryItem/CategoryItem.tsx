@@ -21,6 +21,7 @@ const CategoryItem = ({ title, imageUrl }: CategoryItemProps) => {
           className={`${styles.image} ${
             hasAdditionalStyle ? styles.fullSize : ""
           }`}
+          priority
           alt="Category Image"
           width={100}
           height={100}

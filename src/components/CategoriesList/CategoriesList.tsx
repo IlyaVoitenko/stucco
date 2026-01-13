@@ -1,18 +1,20 @@
 "use client";
+import React from "react";
 import CategoryItem from "../CategoryItem";
 import styles from "./styles.module.scss";
-type Category = {
+
+interface Category {
   id: number;
   name: string;
   image: string;
   updatedAt: string;
   createdAt: string;
-};
+}
 
-const CategoriesList = ({ categories }: { categories: Category[] }) => {
+const CategoriesList = ({ categories }: { categories: Category[] | [] }) => {
   return (
     <ul className={styles.container}>
-      {categories && categories.length > 0 ? (
+      {categories.length > 0 ? (
         categories.map((category) => (
           <li key={category.id}>
             <CategoryItem title={category.name} imageUrl={category.image} />
@@ -25,4 +27,4 @@ const CategoriesList = ({ categories }: { categories: Category[] }) => {
   );
 };
 
-export default CategoriesList;
+export default React.memo(CategoriesList);

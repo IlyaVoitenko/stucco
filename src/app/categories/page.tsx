@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 import { Metadata } from "next";
-import { getCategories } from "@/app/api/categories/route";
+import { getCategories } from "@/lib/categories";
 import CategoriesList from "@/components/CategoriesList";
 
 export const metadata: Metadata = {
