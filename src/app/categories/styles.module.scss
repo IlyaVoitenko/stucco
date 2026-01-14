@@ -19,3 +19,115 @@
   margin-top: 20px;
   color: $grey;
 }
+.containerLoader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  padding-top: 7rem;
+  @include desktop {
+    padding-top: 15rem;
+  }
+  @include mobile {
+    padding-top: 8rem;
+    padding-bottom: 1rem;
+  }
+  .title {
+    width: 100%;
+    text-align: center;
+    font-size: 2rem;
+    color: rgba(255, 255, 255, 0.644);
+    margin: 1rem 0;
+  }
+  .containerCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 250px;
+    background-color: rgb(40, 39, 39);
+    border-radius: 8px;
+    @include desktop {
+      width: 400px;
+      height: 550px;
+      border-radius: 2rem;
+    }
+    @include laptopL {
+      width: 250px;
+      height: 350px;
+      border-radius: 1rem;
+    }
+    @include laptop {
+      width: 200px;
+      height: 300px;
+      border-radius: 1rem;
+      gap: 2rem;
+    }
+    @include mobile {
+      width: 180px;
+      height: 250px;
+      margin-top: 1rem;
+    }
+    .image {
+      width: 80%;
+      height: 70%;
+      border-radius: 8px;
+      transform: scale(1);
+      animation: pulse 2s infinite;
+      background-color: black;
+      @include laptopL {
+        border-radius: 1rem;
+      }
+      @include laptop {
+        height: 55%;
+        border-radius: 1rem;
+      }
+    }
+    .name {
+      width: 80%;
+      height: 100px;
+      border-radius: 4px;
+      margin-top: 10px;
+      transform: scale(1);
+      animation: pulse 2s infinite;
+      background-color: black;
+      @include desktop {
+        height: 70px;
+      }
+      @include laptopL {
+        height: 40px;
+        border-radius: 1rem;
+      }
+      @include laptop {
+        height: 40px;
+        border-radius: 1rem;
+      }
+      @include tablet {
+        height: 30px;
+      }
+      @include mobile {
+        height: 20px;
+      }
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        background-color: rgb(30, 30, 30);
+      }
+
+      70% {
+        transform: scale(1);
+        background-color: rgb(46, 45, 45);
+      }
+
+      100% {
+        transform: scale(0.95);
+        background-color: rgb(30, 30, 30);
+      }
+    }
+  }
+}

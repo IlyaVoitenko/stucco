@@ -40,8 +40,25 @@
       gap: 2rem;
     }
     .workHours {
+      @include laptopL {
+        font-size: $textLaptopLHeader;
+        line-height: 2rem;
+      }
+      @include tablet {
+        font-size: $textTabletHeader;
+      }
       ul {
         list-style-type: none;
+
+        @include desktop {
+          font-size: $textDesktopHeader;
+        }
+        @include laptopL {
+          font-size: $textLaptopLHeader;
+        }
+        @include tablet {
+          font-size: $textTabletHeader;
+        }
       }
     }
   }
@@ -54,10 +71,26 @@
 
     @include desktop {
       height: 200px;
+      font-size: $textDesktopHeader;
+    }
+    @include laptopL {
+      font-size: $textLaptopLHeader;
+    }
+    @include tablet {
+      font-size: $textTabletHeader;
     }
   }
   .copy {
     margin-top: 1rem;
+    @include laptopL {
+      font-size: $textLaptopLHeader;
+    }
+    @include desktop {
+      font-size: $textDesktopHeader;
+    }
+    @include tablet {
+      font-size: $textTabletHeader;
+    }
   }
   @include link;
 }

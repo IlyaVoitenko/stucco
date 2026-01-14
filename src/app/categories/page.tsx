@@ -36,6 +36,7 @@ export const metadata: Metadata = {
 
 const Categories = async () => {
   const posts = await getCategories();
+
   return (
     <div className={styles.container}>
       <CategoriesList categories={posts} />
