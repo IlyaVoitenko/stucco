@@ -89,6 +89,9 @@
   @include tablet {
     font-size: $textTabletHeader;
   }
+  @include macBook16 {
+    font-size: $textLaptopMacBook16Header;
+  }
 }
 .active {
   color: $grey;
@@ -101,5 +104,8 @@
   }
   @include tablet {
     font-size: $textTabletHeader;
+  }
+  @include macBook16 {
+    font-size: $textLaptopMacBook16Header;
   }
 }

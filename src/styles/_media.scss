@@ -36,7 +36,7 @@
 }
 @mixin laptopL {
   $max-laptopL: $desktop - 1;
-  $min-laptopL: $laptopL - 1;
+  $min-laptopL: $laptopL;
   @media screen and
     (
       min-width: #{$min-laptopL}
@@ -48,7 +48,11 @@
     @content;
   }
 }
-
+@mixin macBook16 {
+  @media (min-width: $macBook16) and (max-width: $desktop - 1) {
+    @content;
+  }
+}
 @mixin desktop {
   @media screen and (min-width: $desktop) {
     @content;
