@@ -37,3 +37,48 @@
     font-size: 2rem;
   }
 }
+.CardLayout {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 200px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition:
+      width 0.7s ease,
+      height 0.7s ease,
+      box-shadow 0.3s ease;
+    @include desktop {
+      width: 400px;
+      height: 550px;
+    }
+
+    &:hover {
+      width: 220px;
+      height: 270px;
+      box-shadow: 1px 5px 20px rgba(255, 254, 254, 0.2);
+
+      @include desktop {
+        width: 420px;
+        height: 570px;
+      }
+    }
+
+    .image {
+      width: auto;
+      height: auto;
+      @include desktop {
+        width: auto;
+        height: 400px;
+      }
+    }
+    .fullSize {
+      width: inherit;
+      height: auto;
+    }
+  }
+}

@@ -17,7 +17,11 @@ export default async function CategoriesList({
     <ul className={styles.container}>
       {categories.map((category: ICategory) => (
         <li key={category.id}>
-          <CategoryItem title={category.name} imageUrl={category.image} />
+          <CategoryItem
+            title={category.name}
+            imageUrl={category.image}
+            id={category.id}
+          />
         </li>
       ))}
     </ul>
