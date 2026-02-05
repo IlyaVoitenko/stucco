@@ -1,13 +1,5 @@
 @use "../../styles/media" as *;
+@use "../../styles/layout" as *;
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding: 10px;
-  border-radius: 8px;
-  list-style-type: none;
-  flex-wrap: wrap;
-  @include tablet {
-    gap: 2rem;
-  }
+  @extend .containerList;
 }

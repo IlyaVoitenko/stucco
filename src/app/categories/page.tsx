@@ -35,11 +35,11 @@ export const metadata: Metadata = {
 };
 
 const Categories = async () => {
-  const posts = await getCategories();
+  const categories = await getCategories();
 
   return (
     <div className={styles.container}>
-      <CategoriesList categories={posts} />
+      <CategoriesList categories={categories} />
     </div>
   );
 };

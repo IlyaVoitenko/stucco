@@ -9,7 +9,7 @@ const GoBackBtn = ({ path, text }: GoBackBtnProps) => {
   return (
     <div className={styles.container}>
       <Link href={path} className={styles.btnGoBack}>
-        <button>
+        <button aria-label="button back to categories" role="button">
           {`←`}
           <span className={styles.btnText}>{text}</span>
         </button>

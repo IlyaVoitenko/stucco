@@ -1,36 +1,36 @@
 "use client";
 import Image from "next/image";
-import { getCategoryById } from "@/lib/categories";
+import { getProductsCategoryById } from "@/lib/categories";
 import { useCategoriesStore } from "@/stores/categories-store";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import React from "react";
 import { hasAdditionalStyle } from "../CategoryItem/constants.data";
+import { IProduct } from "@/types";
 
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
   const selectedCategoryId = useCategoriesStore(
     (state) => state.selectedCategoryId,
   );
-  console.log("selectedCategoryId", selectedCategoryId);
   useEffect(() => {
     if (!selectedCategoryId) return;
     window.scrollTo(0, 0);
     const getProductsByCategory = async (id: number) => {
-      const response = await getCategoryById(id);
+      const response = await getProductsCategoryById(id);
       setProducts(response);
       return response;
     };
     getProductsByCategory(selectedCategoryId);
   }, [selectedCategoryId]);
-  console.log("products", products);
 
   return (
     <main className={styles.CardLayout}>
       <main>
-        {products.length > 0
-          ? products.map((product: any) => (
-              <div key={product.id} className={styles.container}>
+        {products.length > 0 ? (
+          <ul className={styles.containerList}>
+            {products.map((product: IProduct) => (
+              <li key={product.id} className={styles.container}>
                 <Image
                   src={product.images[0]}
                   className={`${styles.image} ${
@@ -42,9 +42,12 @@ const ProductsList = () => {
                   height={100}
                 />
                 {product.name} - {product.price} €
-              </div>
-            ))
-          : "Keine Produkte in dieser Kategorie gefunden."}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <h1>Keine Produkte in dieser Kategorie gefunden.</h1>
+        )}
       </main>
     </main>
   );
