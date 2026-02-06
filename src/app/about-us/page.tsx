@@ -44,7 +44,7 @@ const jsonLd: WithContext<AboutPage> = {
 };
 export default function AboutUs() {
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <h1 className={`${styles.title} ${styles.mb}`}>HERZLICH WILLKOMMEN</h1>
       <br />
       <p>
@@ -82,6 +82,6 @@ export default function AboutUs() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-    </div>
+    </main>
   );
 }

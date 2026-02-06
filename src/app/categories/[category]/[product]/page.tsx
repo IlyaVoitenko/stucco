@@ -1,82 +1,95 @@
+import { getProductById } from "@/lib/products";
 import styles from "./styles.module.scss";
-import { Metadata } from "next";
-import { WithContext, ContactPoint } from "schema-dts";
+import ProductInfo from "@/components/ProductInfo";
+import Link from "next/link";
+import { PAGES } from "@/config/pages.config";
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ category: string; product: string }>;
+}) {
+  const resolvedParams = await params;
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.BASE_URL || "http://localhost:3000"),
-  title: "",
-  description: "",
-  openGraph: {
-    title: "– Stuckwerkstatt Voitenko",
-    description: "",
-    url: process.env.BASE_URL + "/contact-us",
-    siteName: "Stuckwerkstatt Voitenko",
-    images: [
-      {
-        url: `${process.env.BASE_URL}/og-logo.png`,
-        width: 800,
-        height: 600,
-        alt: "Logo der Firma",
-      },
-    ],
-    locale: "de_DE",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "– Stuckwerkstatt Voitenko",
-    description: "",
-    images: [`${process.env.BASE_URL}/og-logo.png`],
-  },
-  alternates: {
-    canonical: process.env.BASE_URL + "/contact-us",
-  },
-};
+  const productSlug = resolvedParams.product;
+  const productId = Number(productSlug.split("-").pop());
 
-const jsonLd: WithContext<ContactPoint> = {
-  "@context": "https://schema.org",
-  "@type": "ContactPoint",
-  name: "Stuckwerkstatt Voitenko Kontaktseite",
-  image: `${process.env.BASE_URL}/og-logo.png`,
-  email: "stuckwerkstattvoitenko@gmail.com",
-  telephone: "+491639252077",
-  areaServed: "DE",
-  availableLanguage: ["Deutsch", "Russisch", "Ukrainisch"],
-  contactType: "customer support",
-  hoursAvailable: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "18:00",
-  },
-};
-export default function Product() {
+  const product = await getProductById(productId);
+
+  const title = `${product.name} – Stuckwerkstatt Voitenko`;
+  const description =
+    product.description ??
+    `Hochwertiges Produkt aus der Kategorie ${product.category.name}`;
+
+  const url = `${process.env.BASE_URL}/categories/${resolvedParams.category}/${resolvedParams.product}`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      siteName: "Stuckwerkstatt Voitenko",
+      images: product.images?.length
+        ? product.images.map((img: string) => ({
+            url: img,
+            width: 1200,
+            height: 630,
+            alt: product.name,
+          }))
+        : [
+            {
+              url: `${process.env.BASE_URL}/og-logo.png`,
+              width: 1200,
+              height: 630,
+              alt: "Stuckwerkstatt Voitenko",
+            },
+          ],
+      locale: "de_DE",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: product.images?.[0]
+        ? [product.images[0]]
+        : [`${process.env.BASE_URL}/og-logo.png`],
+    },
+  };
+}
+export default async function Product({
+  params,
+}: {
+  params: { category: string; product: string };
+}) {
+  const productId = Number(params.product.split("-").pop());
+  const product = await getProductById(productId);
+  await new Promise((resolve) => setTimeout(resolve, 100000));
   return (
     <main className={styles.container}>
-      <h1>Kontaktieren Sie uns</h1>
-      <br />
-      <span>
-        Email:{" "}
-        <a href="mailto:stuckwerkstattvoitenko@gmail.com">
-          stuckwerkstattvoitenko@gmail.com
-        </a>
-      </span>
-
-      <br />
-      <span>
-        Telefon: <a href="tel:+491639252077">+491639252077</a>
-      </span>
-      <br />
-      <address>
-        <p>Stuckwerkstatt Voitenko</p>
-        <p>Adress: Berliner str 23A, 19300, Grabow </p>
-      </address>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-        }}
-      />
+      <nav
+        className={styles.breadcrumbs}
+        aria-label="Breadcrumb"
+        role="navigation"
+      >
+        <Link href={PAGES.CATEGORIES}>Zurück zur Kategorie</Link> /{" "}
+        <Link
+          href={`${PAGES.CATEGORIES}/${product.category.name.toLowerCase()}`}
+        >
+          {` ${product.category.name}`}
+        </Link>{" "}
+        /
+        <Link
+          className={styles.currentBreadcrumb}
+          href={`${PAGES.CATEGORIES}/${product.category.name.toLowerCase()}/${product.name.toLowerCase()}-${product.id}`}
+        >
+          {" "}
+          {product.name}
+        </Link>
+      </nav>
+      <ProductInfo product={product} />
     </main>
   );
 }

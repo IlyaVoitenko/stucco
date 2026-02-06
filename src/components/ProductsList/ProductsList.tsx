@@ -7,6 +7,7 @@ import styles from "./styles.module.scss";
 import React from "react";
 import { hasAdditionalStyle } from "../CategoryItem/constants.data";
 import { IProduct } from "@/types";
+import Link from "next/dist/client/link";
 
 const ProductsList = () => {
   const [products, setProducts] = useState([]);
@@ -30,19 +31,26 @@ const ProductsList = () => {
         {products.length > 0 ? (
           <ul className={styles.containerList}>
             {products.map((product: IProduct) => (
-              <li key={product.id} className={styles.container}>
-                <Image
-                  src={product.images[0]}
-                  className={`${styles.image} ${
-                    hasAdditionalStyle(product.name) ? styles.fullSize : ""
-                  }`}
-                  priority
-                  alt={product.name}
-                  width={100}
-                  height={100}
-                />
-                {product.name} - {product.price} €
-              </li>
+              <Link
+                key={product.id}
+                href={`/categories/${product.category.name.toLowerCase()}/${product.name.toLowerCase()}-${product.id}`}
+              >
+                <li className={styles.container}>
+                  <Image
+                    src={product.images[0]}
+                    className={`${styles.image} ${
+                      hasAdditionalStyle(product.name) ? styles.fullSize : ""
+                    }`}
+                    priority
+                    alt={product.name}
+                    width={100}
+                    height={100}
+                  />
+                  <span>
+                    {product.name} - {product.price} €{" "}
+                  </span>
+                </li>
+              </Link>
             ))}
           </ul>
         ) : (
