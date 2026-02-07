@@ -3,7 +3,7 @@ import GoBackBtn from "@/components/GoBackBtn";
 import { PAGES } from "@/config/pages.config";
 import ProductsList from "@/components/ProductsList";
 
-const CategoryPage = () => {
+const CategoryPage = async () => {
   return (
     <div className={styles.container}>
       <GoBackBtn path={PAGES.CATEGORIES} text="Zurück zu Kategorien" />

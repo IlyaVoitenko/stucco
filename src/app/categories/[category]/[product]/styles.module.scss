@@ -12,21 +12,64 @@
   font-weight: bold;
   width: 50px;
   height: 20px;
-  transform: scale(1);
-  animation: pulse 2s infinite;
-  background-color: black;
 }
 .containerLoader {
+  .breadcrumbs {
+    font-weight: bold;
+    width: 10%;
+    height: 50px;
+    transform: scale(1);
+    animation: pulse 2s infinite;
+    background-color: black;
+    border-radius: 10px;
+
+    @include desktop {
+      width: 400px;
+      height: 70px;
+      border-radius: 20px;
+    }
+    @include laptopL {
+      width: 150px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    @include laptop {
+      width: 150px;
+      height: 40px;
+      border-radius: 10px;
+    }
+    @include tablet {
+      width: 100px;
+      height: 30px;
+      border-radius: 10px;
+    }
+    @include mobile {
+      width: 100px;
+      height: 30px;
+      border-radius: 10px;
+    }
+  }
   .productImagePriceSizeContainer {
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
+    @include desktop {
+      margin-top: 5rem;
+    }
+    @include laptopL {
+      margin-top: 2rem;
+    }
+    @include laptop {
+      margin-top: 2rem;
+    }
     @include tablet {
       flex-direction: column;
       align-items: center;
       gap: 2rem;
+      margin-top: 1rem;
     }
     @include mobile {
+      margin-top: 1rem;
       flex-direction: column;
       align-items: center;
       gap: 2rem;
@@ -39,21 +82,46 @@
       animation: pulse 2s infinite;
       background-color: black;
       @include desktop {
-        width: auto;
+        width: 700px;
         height: 800px;
-        object-fit: cover;
+        border-radius: 20px;
       }
-      @include mobileL {
-        width: 100%;
-        height: auto;
+      @include laptopL {
+        width: 400px;
+        height: 500px;
+        border-radius: 15px;
       }
-      @include mobileM {
-        width: 100%;
-        height: auto;
+      @include laptop {
+        width: 300px;
+        height: 400px;
+        border-radius: 15px;
       }
-      @include mobileS {
-        width: 100%;
-        height: auto;
+      @include tablet {
+        width: 50%;
+        height: 300px;
+        border-radius: 15px;
+      }
+      @include mobile {
+        width: 50%;
+        height: 200px;
+        border-radius: 15px;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.95);
+          background-color: rgb(30, 30, 30);
+        }
+
+        70% {
+          transform: scale(1);
+          background-color: rgb(46, 45, 45);
+        }
+
+        100% {
+          transform: scale(0.95);
+          background-color: rgb(30, 30, 30);
+        }
       }
     }
     .productInfo {
@@ -67,38 +135,35 @@
       }
       .productSize {
         display: flex;
-        transform: scale(1);
-        animation: pulse 2s infinite;
-        background-color: black;
+
         .sizeItem {
-          display: flex;
-          align-items: center;
-          padding-block: 1rem;
-          padding-inline: 1rem;
-          gap: 1rem;
-          border: 1px solid #ccccccb9;
-          border-radius: 0.5rem;
-          cursor: pointer;
-          &:hover {
-            border: 1px solid #ccccccec;
-          }
+          transform: scale(1);
+          animation: pulse 2s infinite;
+          background-color: black;
           @include desktop {
-            border-radius: 1rem;
-            border: 2px solid #ccccccb9;
-            padding-block: 2rem;
-            padding-inline: 3rem;
-            &:hover {
-              border: 2px solid #ccccccec;
-            }
+            height: 100px;
+            width: 600px;
+            border-radius: 20px;
+          }
+          @include laptopL {
+            height: 60px;
+            width: 400px;
+            border-radius: 15px;
           }
           @include laptop {
-            border-radius: 0.7rem;
-            border: 1px solid #ccccccb9;
-            padding-block: 0.8rem;
-            padding-inline: 1rem;
-            &:hover {
-              border: 1px solid #ccccccec;
-            }
+            height: 50px;
+            width: 300px;
+            border-radius: 15px;
+          }
+          @include tablet {
+            height: 40px;
+            width: 300px;
+            border-radius: 15px;
+          }
+          @include mobile {
+            height: 40px;
+            width: 200px;
+            border-radius: 15px;
           }
           .sizeLabel {
             font-size: 14px;
@@ -113,21 +178,80 @@
     }
   }
   .productDetails {
-    h1 {
-      width: 100%;
-      height: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    .productName {
+      width: 20%;
+      height: 100px;
       margin-bottom: 1rem;
       transform: scale(1);
       animation: pulse 2s infinite;
-      background-color: white;
+      border-radius: 15px;
+      @include desktop {
+        margin-top: 5rem;
+        width: 500px;
+        height: 100px;
+        border-radius: 20px;
+      }
+      @include laptopL {
+        margin-top: 2rem;
+        width: 300px;
+        height: 70px;
+        border-radius: 15px;
+      }
+      @include laptop {
+        margin-top: 2rem;
+        width: 200px;
+        height: 50px;
+        border-radius: 15px;
+      }
+      @include tablet {
+        margin-top: 2rem;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+      }
+      @include mobile {
+        margin-top: 2rem;
+        width: 150px;
+        height: 50px;
+        border-radius: 15px;
+      }
     }
-    span {
+    .productDescription {
       width: 100%;
-      height: 100px;
-      margin-bottom: 0.5rem;
+      height: 300px;
       transform: scale(1);
       animation: pulse 2s infinite;
-      background-color: black;
+
+      @include desktop {
+        margin-top: 2rem;
+        width: 100%;
+        height: 400px;
+        border-radius: 20px;
+      }
+
+      @include laptopL {
+        width: 100%;
+        height: 170px;
+        border-radius: 15px;
+      }
+      @include laptop {
+        width: 100%;
+        height: 400px;
+        border-radius: 15px;
+      }
+      @include tablet {
+        width: 100%;
+        height: 250px;
+        border-radius: 15px;
+      }
+      @include mobile {
+        width: 100%;
+        height: 200px;
+        border-radius: 15px;
+      }
     }
 
     @include tablet {
@@ -135,6 +259,22 @@
     }
     @include mobile {
       margin-top: 2rem;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(0.95);
+        background-color: rgb(30, 30, 30);
+      }
+
+      70% {
+        transform: scale(1);
+        background-color: rgb(46, 45, 45);
+      }
+
+      100% {
+        transform: scale(0.95);
+        background-color: rgb(30, 30, 30);
+      }
     }
   }
 }

@@ -66,7 +66,6 @@ export default async function Product({
 }) {
   const productId = Number(params.product.split("-").pop());
   const product = await getProductById(productId);
-  await new Promise((resolve) => setTimeout(resolve, 100000));
   return (
     <main className={styles.container}>
       <nav
