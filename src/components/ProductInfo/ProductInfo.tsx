@@ -33,7 +33,8 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
                   {size.itemPrice.toLocaleString("de-DE", {
                     style: "currency",
                     currency: "EUR",
-                  })}
+                  })}{" "}
+                  Brutto
                 </p>
               </div>
             ))}
