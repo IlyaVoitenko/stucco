@@ -62,9 +62,10 @@ export async function generateMetadata({
 export default async function Product({
   params,
 }: {
-  params: { category: string; product: string };
+  params: Promise<{ category: string; product: string }>;
 }) {
-  const productId = Number(params.product.split("-").pop());
+  const resolvedParams = await params;
+  const productId = await Number(resolvedParams.product.split("-").pop());
   const product = await getProductById(productId);
   return (
     <main className={styles.container}>
