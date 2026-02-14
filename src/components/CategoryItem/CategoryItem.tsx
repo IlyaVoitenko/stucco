@@ -32,7 +32,7 @@ const CategoryItem = ({ title, imageUrl, id }: CategoryItemProps) => {
           width={100}
           height={100}
         />
-        <h2> {title}</h2>
+        <h2> {title} </h2>
       </div>
     </Link>
   );

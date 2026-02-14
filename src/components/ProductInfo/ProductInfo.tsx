@@ -10,7 +10,7 @@ interface ProductInfoProps {
 }
 const ProductInfo = ({ product }: ProductInfoProps) => {
   return (
-    <>
+    <main className={styles.containerProductInfo}>
       {" "}
       <div className={styles.productImagePriceSizeContainer}>
         <Image
@@ -52,7 +52,7 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <br />
         <p>Material : {capitalizeFirstLetter(product.material)}</p>
       </div>
-    </>
+    </main>
   );
 };
 

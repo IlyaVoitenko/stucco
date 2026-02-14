@@ -10,7 +10,10 @@
   padding: 10px;
   border-radius: 25px;
   cursor: pointer;
-  transition: width 0.7s ease, height 0.7s ease, box-shadow 0.3s ease;
+  transition:
+    width 0.7s ease,
+    height 0.7s ease,
+    box-shadow 0.3s ease;
   @include desktop {
     width: 400px;
     height: 550px;
