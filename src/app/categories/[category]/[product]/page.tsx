@@ -66,6 +66,7 @@ export default async function Product({
 }) {
   const resolvedParams = await params;
   const productId = await Number(resolvedParams.product.split("-").pop());
+  console.log("productId", productId);
   const product = await getProductById(productId);
   return (
     <main className={styles.container}>

@@ -24,7 +24,6 @@ const ProductsList = () => {
     };
     getProductsByCategory(selectedCategoryId);
   }, [selectedCategoryId]);
-
   return (
     <main className={styles.CardLayout}>
       <main>
