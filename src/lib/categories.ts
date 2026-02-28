@@ -1,11 +1,11 @@
-export const revalidate = 3600; // Revalidate every hour
+// Revalidate every hour - 3600 seconds
 
 export const getCategories = async () => {
   try {
     const data = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}categories`,
       {
-        next: { revalidate },
+        next: { revalidate: 3600 },
       },
     );
     if (!data.ok) {
@@ -21,7 +21,7 @@ export const getProductsCategoryById = async (id: number) => {
     const data = await fetch(
       `${process.env.NEXT_PUBLIC_BACKEND_URL}products/all/${id}`,
       {
-        next: { revalidate },
+        next: { revalidate: 3600 },
       },
     );
     if (!data.ok) {

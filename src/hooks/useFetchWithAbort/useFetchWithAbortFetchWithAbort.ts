@@ -16,7 +16,6 @@ export function useFetchWithAbort({ url }: { url: string }) {
         if (!mounted) return;
         setLoading(true);
         const res = await fetch(url, { signal });
-        console.log("res.", res);
         if (!res.ok) throw new Error(res.statusText);
         const json = await res.json();
         if (mounted && !signal.aborted) {
