@@ -2,4 +2,11 @@
 @use "../../styles/layout" as *;
 .container {
   @extend .containerList;
+
+  @include laptopL {
+    gap: 6rem;
+  }
+  @include desktop {
+    gap: 8rem;
+  }
 }

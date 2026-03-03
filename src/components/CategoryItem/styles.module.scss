@@ -28,18 +28,63 @@
       width: 420px;
       height: 570px;
     }
+    .title {
+      color: #ffffff9b;
+    }
   }
-
+  .title {
+    text-align: center;
+    @include mobile {
+      line-height: 1.5rem;
+      font-size: 1rem;
+    }
+    @include tablet {
+      line-height: 1.5rem;
+      font-size: 1rem;
+    }
+    @include laptop {
+      line-height: 2rem;
+      font-size: 1.3rem;
+    }
+    @include laptopL {
+      line-height: 2rem;
+    }
+    @include desktop {
+      line-height: 4rem;
+      font-size: 1.5rem;
+    }
+  }
   .image {
     width: auto;
     height: auto;
+    @include laptop {
+      width: 100px;
+      height: auto;
+    }
     @include desktop {
-      width: auto;
-      height: 400px;
+      width: 400px;
+      height: auto;
+      max-height: 550px;
     }
   }
   .fullSize {
     width: inherit;
     height: auto;
+    @include mobile {
+      width: 150px;
+      height: auto;
+    }
+    @include tablet {
+      width: 150px;
+      height: auto;
+    }
+    @include laptop {
+      width: 100px;
+      height: auto;
+    }
+    @include laptopL {
+      width: auto;
+      height: auto;
+    }
   }
 }
