@@ -3,7 +3,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "./styles.module.scss";
 import { IProduct, IProductSize } from "@/types";
-import { capitalizeFirstLetter, translateToGerman } from "./constants";
+import {
+  capitalizeFirstLetter,
+  exceptionsForCategory,
+  translateToGerman,
+} from "./constants";
 
 interface ProductInfoProps {
   product: IProduct;
@@ -51,6 +55,13 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         <p>Produkttyp : {translateToGerman(product.type)}</p>
         <br />
         <p>Material : {capitalizeFirstLetter(product.material)}</p>
+        {exceptionsForCategory.includes(product.category.name) ? (
+          <p>
+            Die angegebene Breite bezieht sich auf den Teil des Kapitells, der
+            auf der Säule montiert wird. Andere Abmessungen des Produkts können
+            abweichen.
+          </p>
+        ) : null}
       </div>
     </main>
   );
