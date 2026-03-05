@@ -20,7 +20,7 @@
     height: 50px;
     transform: scale(1);
     animation: pulse 2s infinite;
-    background-color: black;
+    background-color: rgb(132, 132, 132);
     border-radius: 10px;
 
     @include desktop {
@@ -80,7 +80,7 @@
       border-radius: 10px;
       transform: scale(1);
       animation: pulse 2s infinite;
-      background-color: black;
+      background-color: rgb(132, 132, 132);
       @include desktop {
         width: 700px;
         height: 800px;
@@ -110,17 +110,17 @@
       @keyframes pulse {
         0% {
           transform: scale(0.95);
-          background-color: rgb(30, 30, 30);
+          background-color: rgb(132, 132, 132);
         }
 
         70% {
           transform: scale(1);
-          background-color: rgb(46, 45, 45);
+          background-color: rgb(150, 150, 150);
         }
 
         100% {
           transform: scale(0.95);
-          background-color: rgb(30, 30, 30);
+          background-color: rgb(132, 132, 132);
         }
       }
     }
@@ -139,7 +139,7 @@
         .sizeItem {
           transform: scale(1);
           animation: pulse 2s infinite;
-          background-color: black;
+          background-color: rgb(132, 132, 132);
           @include desktop {
             height: 100px;
             width: 600px;
@@ -263,17 +263,17 @@
     @keyframes pulse {
       0% {
         transform: scale(0.95);
-        background-color: rgb(30, 30, 30);
+        background-color: rgb(132, 132, 132);
       }
 
       70% {
         transform: scale(1);
-        background-color: rgb(46, 45, 45);
+        background-color: rgb(150, 150, 150);
       }
 
       100% {
         transform: scale(0.95);
-        background-color: rgb(30, 30, 30);
+        background-color: rgb(132, 132, 132);
       }
     }
   }
