@@ -32,6 +32,15 @@
     width: 100px;
     object-fit: contain;
   }
+  .containerLogo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+
+    .logoLink {
+      cursor: pointer;
+    }
+  }
 }
 .mobileContainer {
   display: none;
@@ -78,7 +87,7 @@
   }
 }
 .inactive {
-  color: $linkActiveColor;
+  color: $linkInactiveColor;
   @include link;
   @include desktop {
     font-size: $textDesktopHeader;
@@ -94,7 +103,7 @@
   }
 }
 .active {
-  color: $grey;
+  color: $linkActiveColor;
   @include link;
   @include desktop {
     font-size: $textDesktopHeader;

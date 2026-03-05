@@ -4,12 +4,12 @@ import styles from "./styles.module.scss";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import menuClose from "../../assets/menu-close.svg";
-import menu from "../../assets/menu.svg";
+import menuClose from "../../assets/menu-close.png";
+import menu from "../../assets/menu.png";
 import { usePathname } from "next/navigation";
 
 const handleMoveMobileMenu = (
-  setIsMobile: React.Dispatch<React.SetStateAction<boolean>>
+  setIsMobile: React.Dispatch<React.SetStateAction<boolean>>,
 ) => setIsMobile((prev: boolean) => !prev);
 const Header = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,21 +19,26 @@ const Header = () => {
     <header>
       <div className={styles.mobileContainer}>
         <div className={styles.logoContainer}>
-          <Image
-            src={"/logo-white.png"}
-            alt="logo"
-            width={100}
-            height={100}
-            priority={true}
-          />
-          <Image
-            src={isMobile ? menuClose : menu}
-            alt="logo"
-            width={20}
-            height={20}
-            priority={true}
-            onClick={() => setIsMobile((value) => !value)}
-          />
+          <div>
+            <Image
+              src={"/logo-black.png"}
+              alt="logo"
+              width={100}
+              height={100}
+              priority={true}
+              unoptimized={true}
+            />
+          </div>
+          <Link href={PAGES.HOME}>
+            <Image
+              src={isMobile ? menuClose : menu}
+              alt="logo"
+              width={20}
+              height={20}
+              priority={true}
+              onClick={() => setIsMobile((value) => !value)}
+            />
+          </Link>
         </div>
 
         <nav
@@ -69,17 +74,18 @@ const Header = () => {
         </nav>
       </div>
       <div className={styles.desktopContainer}>
-        <Image
-          src={"/logo-white.png"}
-          alt="logo"
-          width={100}
-          height={100}
-          priority={true}
-          style={{
-            width: "auto",
-            height: "100%",
-          }}
-        />
+        <div className={styles.containerLogo}>
+          <Link href={PAGES.HOME} className={styles.logoLink}>
+            <Image
+              src={"/logo-black.png"}
+              alt="logo"
+              fill={true}
+              priority={true}
+              style={{ objectFit: "contain" }}
+              unoptimized={true}
+            />
+          </Link>
+        </div>
         <nav className={styles.navList}>
           <Link
             href={PAGES.HOME}

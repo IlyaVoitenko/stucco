@@ -28,8 +28,14 @@
   min-height: 100dvh;
   overflow-x: hidden;
   padding-top: 7rem;
+  gap: 10rem;
   @include desktop {
     padding-top: 15rem;
+    gap: 25rem;
+  }
+  @include laptopL {
+    padding-top: 10rem;
+    gap: 15rem;
   }
   @include mobile {
     padding-top: 8rem;
@@ -49,10 +55,10 @@
     justify-content: space-evenly;
     width: 200px;
     height: 250px;
-    background-color: rgb(40, 39, 39);
+    background-color: rgb(178, 178, 178);
     border-radius: 8px;
     @include desktop {
-      width: 400px;
+      width: 350px;
       height: 550px;
       border-radius: 2rem;
     }
@@ -67,6 +73,11 @@
       border-radius: 1rem;
       gap: 2rem;
     }
+    @include tablet {
+      width: 180px;
+      height: 250px;
+      gap: 1rem;
+    }
     @include mobile {
       width: 180px;
       height: 250px;
@@ -78,9 +89,12 @@
       border-radius: 8px;
       transform: scale(1);
       animation: pulse 2s infinite;
-      background-color: black;
+      background-color: rgb(213, 212, 212);
       @include laptopL {
         border-radius: 1rem;
+      }
+      @include tablet {
+        height: 60%;
       }
       @include laptop {
         height: 55%;
@@ -94,7 +108,7 @@
       margin-top: 10px;
       transform: scale(1);
       animation: pulse 2s infinite;
-      background-color: black;
+      background-color: white;
       @include desktop {
         height: 70px;
       }
@@ -116,17 +130,17 @@
     @keyframes pulse {
       0% {
         transform: scale(0.95);
-        background-color: rgb(30, 30, 30);
+        background-color: rgb(216, 215, 215);
       }
 
       70% {
         transform: scale(1);
-        background-color: rgb(46, 45, 45);
+        background-color: rgb(222, 221, 221);
       }
 
       100% {
         transform: scale(0.95);
-        background-color: rgb(30, 30, 30);
+        background-color: rgb(206, 204, 204);
       }
     }
   }

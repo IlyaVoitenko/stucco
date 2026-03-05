@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url><loc>https://stuckwerkstatt.vercel.app/site-notice</loc><lastmod>2026-02-28T10:21:09.194Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-<url><loc>https://stuckwerkstatt.vercel.app/privacy-policy</loc><lastmod>2026-02-28T10:21:09.195Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-<url><loc>https://stuckwerkstatt.vercel.app/categories</loc><lastmod>2026-02-28T10:21:09.195Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-<url><loc>https://stuckwerkstatt.vercel.app/about-us</loc><lastmod>2026-02-28T10:21:09.195Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-<url><loc>https://stuckwerkstatt.vercel.app/contact-us</loc><lastmod>2026-02-28T10:21:09.195Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
-<url><loc>https://stuckwerkstatt.vercel.app</loc><lastmod>2026-02-28T10:21:09.195Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://stuckwerkstatt.vercel.app/site-notice</loc><lastmod>2026-03-05T10:40:53.640Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://stuckwerkstatt.vercel.app/privacy-policy</loc><lastmod>2026-03-05T10:40:53.641Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://stuckwerkstatt.vercel.app</loc><lastmod>2026-03-05T10:40:53.641Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://stuckwerkstatt.vercel.app/about-us</loc><lastmod>2026-03-05T10:40:53.641Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://stuckwerkstatt.vercel.app/contact-us</loc><lastmod>2026-03-05T10:40:53.641Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
+<url><loc>https://stuckwerkstatt.vercel.app/categories</loc><lastmod>2026-03-05T10:40:53.641Z</lastmod><changefreq>yearly</changefreq><priority>0.7</priority></url>
 </urlset>
