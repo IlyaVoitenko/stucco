@@ -1,36 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stuckwerkstatt Voitenko – Web App
 
-## Getting Started
+Marketing website built with [Next.js](https://nextjs.org) (App Router) and TypeScript.
 
-First, run the development server:
+## Tech stack
+
+- **Framework**: Next.js
+- **UI**: React
+- **State**: Zustand
+- **Styling**: Sass
+- **SEO**: `next-sitemap` (runs after `yarn build`)
+
+## Prerequisites
+
+- **Node.js**: 20+ recommended
+- **Package manager**: Yarn (examples below use Yarn)
+
+## Setup
+
+Install dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Run the dev server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Open `http://localhost:3000`.
 
-## Learn More
+## Environment variables
 
-To learn more about Next.js, take a look at the following resources:
+This app reads environment variables via Next.js and `dotenv`. The most relevant variables are:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **`NEXT_PUBLIC_BACKEND_URL`**: Base URL for the backend API (exposed to the browser)
+- **`BASE_URL`**: Public site base URL (used for metadata/OG URLs)
+- **`AWS_S3_CONFIG`**: S3 hostname used to allow remote images in `next.config.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Notes:
 
-## Deploy on Vercel
+- **Local development**: set `BASE_URL` to `http://localhost:3000`.
+- **Images**: if `AWS_S3_CONFIG` is empty, remote images may be blocked by Next.js image security policy.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+yarn dev    # Start Next.js dev server
+yarn build  # Production build (also generates sitemap via postbuild)
+yarn start  # Start production server
+yarn lint   # ESLint
+```
+
+## Project structure (high level)
+
+- **`src/app/`**: Next.js routes (App Router)
+- **`src/components/`**: UI components
+
+## Deployment
+
+Deploy as a standard Next.js app (for example on Vercel). Make sure to configure the **environment variables** above in your hosting provider.
